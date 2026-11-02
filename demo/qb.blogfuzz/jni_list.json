@@ -1,0 +1,24 @@
+{
+  "package": "qb.blogfuzz",
+  "total_jni_functions": 2,
+  "functions": [
+    {
+      "jni_name": "Java_qb_blogfuzz_NativeHelper_fuzzMeArray",
+      "java_class": "qb.blogfuzz.NativeHelper",
+      "java_method": "fuzzMeArray",
+      "params": "byte[]",
+      "return_type": "void",
+      "library": "libblogfuzz.so",
+      "offset": "0xC1C"
+    },
+    {
+      "jni_name": "Java_qb_blogfuzz_NativeHelper_fuzzMeWrapper",
+      "java_class": "qb.blogfuzz.NativeHelper",
+      "java_method": "fuzzMeWrapper",
+      "params": "Wrapper",
+      "return_type": "void",
+      "library": "libblogfuzz.so",
+      "offset": "0xD80"
+    }
+  ]
+}

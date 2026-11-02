@@ -1,0 +1,2 @@
+Java_qb_blogfuzz_NativeHelper_fuzzMeArray void:byte[],
+Java_qb_blogfuzz_NativeHelper_fuzzMeWrapper void:Wrapper,

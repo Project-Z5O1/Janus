@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {
+    "clangd": {
+      "command": ["clangd", "--background-index"],
+      "extensions": [".c", ".cc", ".cpp", ".h", ".hpp"]
+    },
+    "jdtls": {
+      "command": ["jdtls"],
+      "extensions": [".java"]
+    },
+    "smali-lsp": {
+      "command": ["node", "retool/smali-lsp/server.js"],
+      "extensions": [".smali"]
+    }
+  }
+}

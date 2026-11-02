@@ -1,0 +1,209 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "atlas": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "explore": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "hephaestus": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "librarian": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "metis": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "momus": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "multimodal-looker": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "oracle": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "prometheus": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "sisyphus": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "build": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "plan": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "general": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "title": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "summary": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "compaction": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    }
+  },
+  "categories": {
+    "artistry": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "deep": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "quick": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "ultrabrain": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "unspecified-high": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "unspecified-low": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "visual-engineering": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    },
+    "writing": {
+      "model": "zhipuai-coding-plan/glm-5.2",
+      "thinking": {
+        "type": "enabled"
+      },
+      "variant": "xhigh"
+    }
+  },
+  "experimental": {
+    "task_system": true,
+    "dynamic_context_pruning": {
+      "enabled": true,                  // enable startup-state pruning
+      "notification": "minimal",        // "off" (no prompt), "minimal" (short prompt), "detailed" (list pruned logs in detail)
+      "turn_protection": {
+        "enabled": true,
+        "turns": 5                      // never clean up the last 5 turns of conversation data
+      },
+      // never clean up results from these especially important tools (edit and task-state tools are protected by default)
+      "protected_tools": [
+        "task",
+        "todowrite",
+        "todoread",
+        "lsp_rename" // plus any other tool names whose context should be kept for every request
+      ]
+    }
+  },
+  "tmux": {
+    "enabled": true,
+    "layout": "main-vertical"
+  },
+  "ralph_loop": {
+    "enabled": true,
+    "default_max_iterations": 1000
+  },
+  "background_task": {
+    "maxDepth": 5,        // set maximum subtask nesting depth to 5 (default is 3)
+    "maxDescendants": 1000, // set maximum background subagents derived from one conversation to 1000 (default is 50)
+    // 3. Limit concurrency by specific model ID (highest priority)
+    "modelConcurrency": {
+      "xxxxx": 2   // separate concurrency setting for a domestic large model
+    }
+  }
+}

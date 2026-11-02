@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.8)
+project(ObjectConstructTest)
+include_directories(AFTER ${CMAKE_SOURCE_DIR}/include)
+link_directories(${CMAKE_SOURCE_DIR}/lib)
+add_executable(fuzz "test_construct.c")
+set_property(TARGET fuzz APPEND_STRING PROPERTY LINK_FLAGS " -Wl,-rpath=$ORIGIN -Wl,-rpath=$ORIGIN/lib")
+target_link_libraries(fuzz jenv)

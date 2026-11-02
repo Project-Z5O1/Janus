@@ -1,0 +1,5 @@
+CompileFlags:
+  Add:
+    - "-I./assets/include"
+    - "-D__ANDROID__"
+    - "-D__aarch64__"
