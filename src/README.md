@@ -1,4 +1,4 @@
-# Omen
+# Janus
 
 **Agentic JNI-aware fuzzing harness generation for Android native libraries.**
 

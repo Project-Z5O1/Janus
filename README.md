@@ -120,7 +120,7 @@ python3 .agents/skills/omen-pipeline/scripts/omen_state.py \
 
 The [`src/`](src/) directory contains  the engineering implementation of Janus.
 To explore the implementation in more detail, continue with the
-[Omen README](src/README.md).
+[Janus README](src/README.md).
 
 It covers:
 
