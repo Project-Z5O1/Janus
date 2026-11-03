@@ -87,7 +87,6 @@ build, and an on-device smoke test.
 | [`mcptool/`](mcptool/) | JNI signature/offset extraction and supporting analysis utilities |
 | [`apks/`](apks/) | Default APK input location |
 | [`target_APK/`](target_APK/) | Per-package analysis, harnesses, Memory, state, and fuzzing artifacts |
-| [`tests/`](tests/) | Unit tests and skill-contract validation |
 
 ## Prerequisites
 
