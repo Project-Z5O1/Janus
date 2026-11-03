@@ -1,0 +1,2 @@
+Afl.setInstrumentLibraries();
+Afl.done();

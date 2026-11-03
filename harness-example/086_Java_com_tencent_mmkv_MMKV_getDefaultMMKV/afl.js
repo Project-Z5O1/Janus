@@ -1,0 +1,48 @@
+const MODULE_WHITELIST = [
+  "fuzz",
+  "libmmkv.so",
+];
+
+const hook_module = new CModule(`
+  #include <gum/gumdefs.h>
+
+  
+  #define BUF_LEN 256
+
+  void afl_persistent_hook(GumCpuContext *regs, uint8_t *input_buf,
+    uint32_t input_buf_len) {
+
+    regs->x[0] = (uint64_t)input_buf;
+    regs->x[1] = input_buf_len > BUF_LEN ? BUF_LEN : input_buf_len;
+  }
+  `,
+  {}
+);
+
+const pPersistentAddr = DebugSymbol.fromName("fuzz_one_input").address;
+if (pPersistentAddr.isNull()) {
+  throw new Error("Failed to resolve fuzz_one_input");
+}
+
+Module.load("libandroid_runtime.so");
+new ModuleMap().values().forEach(m => {
+  if (!MODULE_WHITELIST.includes(m.name)) {
+    Afl.addExcludedRange(m.base, m.size);
+  }
+});
+
+
+const aflAreaPtr = Module.findExportByName("afl-frida-trace.so", "__afl_area_ptr");
+const harnessSlot = Module.findExportByName("fuzz", "__omen_afl_area_ptr");
+if (aflAreaPtr && harnessSlot) {
+  harnessSlot.writePointer(aflAreaPtr);
+}
+
+Afl.setEntryPoint(pPersistentAddr);
+Afl.setPersistentHook(hook_module.afl_persistent_hook);
+Afl.setPersistentAddress(pPersistentAddr);
+Afl.setPersistentCount(10000);
+Afl.setInMemoryFuzzing();
+Afl.setInstrumentLibraries();
+
+Afl.done();
