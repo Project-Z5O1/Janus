@@ -135,3 +135,15 @@ For the component boundaries, algorithm invariants, and cross-stage contracts, r
 ## 0x6 Demo Video
 
 We have provided a demo video that demonstrates how the system works, you can open DEMO.mp4 in the media directory.
+
+## 0x7 Vulnerability Reports
+
+We notified OPPO of the relevant vulnerabilities by submitting reports through the OPPO Security Center (OSRC). The attached screenshots show our submitted-vulnerability list and three OSRC report-detail URLs, providing supporting documentation of these submissions.
+
+The report IDs visible in the screenshots are:
+
+- OSRC-2026-2112960957058781184
+- OSRC-2026-2115741462279884800
+- OSRC-2026-2115777492253020160
+
+![OPPOSRC](cve-report/OPPO_Reports_Combined_EN.png)
