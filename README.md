@@ -138,7 +138,7 @@ We have provided a demo video that demonstrates how the system works, you can op
 
 ## 0x7 Vulnerability Reports
 
-We notified OPPO of the relevant vulnerabilities by submitting reports through the OPPO Security Center (OSRC). The attached screenshots show our submitted-vulnerability list and three OSRC report-detail URLs, providing supporting documentation of these submissions.
+We notified OPPO/OnePlus of the relevant vulnerabilities by submitting reports through the OPPO/OnePlus Security Center (OSRC). The attached screenshots show our submitted-vulnerability list and three OSRC report-detail URLs, providing supporting documentation of these submissions.
 
 The report IDs visible in the screenshots are:
 
